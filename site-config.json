@@ -1,0 +1,214 @@
+{
+  "site": {
+    "candidateName": "Lisa Callan",
+    "office": "State Representative, 5th Legislative District, Position 2",
+    "tagline": "Steady leadership for the 5th LD.",
+    "metaDescription": "Re-elect Lisa Callan, Democrat for Washington State Representative in the 5th Legislative District. Vice Chair of the Capital Budget. A record on schools, kids' mental health, and gun safety."
+  },
+  "style": {
+    "fontPairing": "archivo-worksans",
+    "heroLayout": "split-right",
+    "endorsementStyle": "quotes",
+    "photoTreatment": "rounded-corners",
+    "sectionSpacing": "default",
+    "navStyle": "solid",
+    "colors": {
+      "primary": "#186A3B",
+      "secondary": "#1F8049",
+      "accent": "#5B9BD5",
+      "background": "#F8F9F6",
+      "surface": "#FFFFFF",
+      "text": "#1B1B1B",
+      "textLight": "#FFFFFF",
+      "textMuted": "#5C5C5C"
+    }
+  },
+  "nav": {
+    "logo": "images/logo.png",
+    "logoText": "Lisa Callan",
+    "links": [
+      { "label": "About", "href": "#about" },
+      { "label": "Record", "href": "#issues" },
+      { "label": "Endorsements", "href": "#endorsements" },
+      { "label": "Volunteer", "href": "#volunteer" },
+      { "label": "Contact", "href": "#contact" }
+    ],
+    "ctaText": "Donate",
+    "ctaLink": "https://secure.actblue.com/donate/lisa-callan"
+  },
+  "sectionOrder": ["hero", "about", "issues", "endorsements", "volunteer", "contact"],
+  "hero": {
+    "image": "images/hero-callan.jpg",
+    "overlay": "Re-elect Lisa Callan",
+    "headline": "Re-elect Lisa Callan",
+    "subheadline": "Democrat for State Representative · 5th LD · Position 2",
+    "ctaText": "Volunteer",
+    "ctaLink": "#volunteer",
+    "secondaryCta": {
+      "text": "Donate",
+      "link": "https://secure.actblue.com/donate/lisa-callan"
+    }
+  },
+  "about": {
+    "sectionTitle": "About Lisa",
+    "headline": "An engineer, a mom, and a budget writer for the 5th LD.",
+    "body": "Lisa got into this work the way a lot of parents do. She watched what state budget decisions did to her kids' classrooms, and she decided the cleanest fix was to help write the budget herself.\n\nBefore Olympia, Lisa was a lead engineer and project manager at Boeing and a software consultant. She and her husband Bryan raised their son in the Issaquah Highlands, where she served two terms on the Issaquah School Board, including a stint as president.\n\nIn 2018, she became the first Democrat in modern memory to win the 5th LD's Position 2. She has won every election since by larger margins. In 2024, she took 56% of the vote.\n\nIn Olympia, Lisa serves as Vice Chair of the Capital Budget. In January 2026, she stepped in as Acting Chair and led negotiations on a $910 million supplemental budget that put more money into school construction, affordable housing, and flood response. She co-chairs the state's Children & Youth Behavioral Work Group and serves on the Education and Children, Youth, and Families committees.\n\nThe work has results. Five Callan bills passed the House in 2024 alone. Her HB 2180 raised the cap on special education funding and passed both chambers without a single no vote. Her early-learning bills helped lock in roughly $100 million for childcare construction. Her HB 1580 created the Children & Youth Multisystem Care Coordinator to find homes for kids stuck in hospital ERs.",
+    "photo": "images/about-callan.jpg",
+    "photoCaption": "Lisa Callan, State Representative for the 5th Legislative District."
+  },
+  "issues": {
+    "sectionTitle": "The Record",
+    "headline": "Where Lisa has put points on the board.",
+    "intro": "Three connected lanes: the Capital Budget, kids and behavioral health, and education. Here is what that has produced.",
+    "items": [
+      {
+        "icon": "school",
+        "title": "Schools and Special Education",
+        "description": "Raised the cap on special education funding from 15% to 17.25% (HB 2180, passed without a no vote). Helped negotiate $1 billion for K-12 construction in the 2025-27 capital budget, plus $109 million more in the 2026 supplemental for small district and tribal compact schools and seismic upgrades."
+      },
+      {
+        "icon": "heart",
+        "title": "Kids and Behavioral Health",
+        "description": "Wrote HB 1580 to find homes for kids stuck in hospital ERs in psychiatric crisis. Co-chairs the state's Children & Youth Behavioral Work Group. Passed bills funding a behavioral health consult line for pediatricians and school counselors, and is moving HB 2038 to fund youth mental health through a surcharge on social media platforms."
+      },
+      {
+        "icon": "home",
+        "title": "Childcare and Early Learning",
+        "description": "Locked in roughly $100 million for childcare construction through HB 2195 and HB 1314. Expanded early learning grants to tribal compact schools. Named 2024 House Champion of the Year by the Children's Campaign Fund."
+      },
+      {
+        "icon": "shield",
+        "title": "Gun Safety",
+        "description": "Voted for every major gun safety bill since 2019. Prime sponsor of permit-to-purchase, lost-or-stolen reporting, and bulk firearm purchase limits. Endorsed by the Alliance for Gun Responsibility."
+      },
+      {
+        "icon": "tools",
+        "title": "Workers and Trades",
+        "description": "96% lifetime score from the Washington State Labor Council. Voted yes on extending unemployment to striking workers. Supports apprenticeship at 15%+ on public works, prevailing wage, and Project Labor Agreements. Pushing apprenticeship into manufacturing and maintenance trades."
+      },
+      {
+        "icon": "leaf",
+        "title": "Climate and Clean Air",
+        "description": "Voted for the Climate Commitment Act. Campaigned to defeat the I-2117 repeal effort. Capital budgets she has shaped include heat pump installations, weatherization, fish-passage culverts, and stormwater infrastructure."
+      },
+      {
+        "icon": "house",
+        "title": "Workforce Housing",
+        "description": "Helped negotiate $776 million for housing and homelessness in the 2025-27 capital budget, plus $150 million more in the 2026 supplemental. Supports ADUs, lot splitting, and density along transit corridors. Focused on suburban East and South King County, where the price-to-income gap is widest."
+      },
+      {
+        "icon": "chip",
+        "title": "Online Safety and AI",
+        "description": "Prime sponsor of HB 2225, the Governor Request Bill regulating AI companion chatbots: detection of self-harm and suicidal ideation, content filters and disclosures for minors, and a ban on manipulative engagement techniques."
+      }
+    ]
+  },
+  "endorsements": {
+    "sectionTitle": "Endorsements",
+    "headline": "The people who know the work, behind it.",
+    "items": [
+      {
+        "name": "Seattle Times Editorial Board",
+        "title": "2024 endorsement",
+        "quote": "Callan brings the kind of substance the 5th LD deserves in Olympia.",
+        "photo": ""
+      },
+      {
+        "name": "Children's Campaign Fund",
+        "title": "2024 House Champion of the Year",
+        "quote": "Lisa Callan is the legislator Washington kids needed in this seat.",
+        "photo": ""
+      },
+      {
+        "name": "Sen. Bill Ramos",
+        "title": "Washington State Senate",
+        "quote": "Lisa shows up, does the homework, and gets bills across the line. That is what the 5th deserves.",
+        "photo": ""
+      },
+      {
+        "name": "King County Councilmember Sarah Perry",
+        "title": "King County Council, District 3",
+        "quote": "I've watched Lisa build the budget that pays for what East King County needs. She is the right person for this job.",
+        "photo": ""
+      },
+      { "name": "Washington Education Association (WEA)", "title": "", "quote": "", "photo": "" },
+      { "name": "Washington State Labor Council", "title": "", "quote": "", "photo": "" },
+      { "name": "Washington Federation of State Employees / Council 28", "title": "", "quote": "", "photo": "" },
+      { "name": "IAM District Lodge 751", "title": "", "quote": "", "photo": "" },
+      { "name": "IBEW", "title": "", "quote": "", "photo": "" },
+      { "name": "Carpenters", "title": "", "quote": "", "photo": "" },
+      { "name": "Laborers", "title": "", "quote": "", "photo": "" },
+      { "name": "UA Local 32", "title": "", "quote": "", "photo": "" },
+      { "name": "WAFOP", "title": "Fraternal Order of Police", "quote": "", "photo": "" },
+      { "name": "UFCW 3000", "title": "", "quote": "", "photo": "" },
+      { "name": "SEIU 925", "title": "", "quote": "", "photo": "" },
+      { "name": "SEIU 775", "title": "", "quote": "", "photo": "" },
+      { "name": "AFT-Washington", "title": "", "quote": "", "photo": "" },
+      { "name": "Washington Conservation Action", "title": "", "quote": "", "photo": "" },
+      { "name": "Planned Parenthood Alliance Advocates", "title": "", "quote": "", "photo": "" },
+      { "name": "Pro-Choice Washington", "title": "", "quote": "", "photo": "" },
+      { "name": "Alliance for Gun Responsibility", "title": "", "quote": "", "photo": "" },
+      { "name": "APACE", "title": "", "quote": "", "photo": "" }
+    ]
+  },
+  "forms": {
+    "volunteer": {
+      "formName": "volunteer",
+      "sectionTitle": "Volunteer",
+      "headline": "Sign up to help.",
+      "intro": "Doors, phones, postcards, and yard signs. Tell us what fits your week.",
+      "fields": [
+        { "name": "name", "label": "Name", "type": "text", "required": true },
+        { "name": "email", "label": "Email", "type": "email", "required": true },
+        { "name": "phone", "label": "Phone", "type": "tel", "required": false },
+        { "name": "zip", "label": "ZIP code", "type": "text", "required": false },
+        {
+          "name": "interest",
+          "label": "How would you like to help?",
+          "type": "select",
+          "required": false,
+          "options": [
+            "Knock on doors",
+            "Make phone calls",
+            "Write postcards",
+            "Yard sign",
+            "Host an event",
+            "Wherever you need me"
+          ]
+        },
+        { "name": "notes", "label": "Anything else we should know?", "type": "textarea", "required": false }
+      ],
+      "submitText": "Sign me up",
+      "successMessage": "Thank you. The campaign will be in touch soon."
+    },
+    "contact": {
+      "formName": "contact",
+      "sectionTitle": "Contact",
+      "headline": "Get in touch with the campaign.",
+      "intro": "Press, scheduling, endorsement requests, or anything else.",
+      "fields": [
+        { "name": "name", "label": "Name", "type": "text", "required": true },
+        { "name": "email", "label": "Email", "type": "email", "required": true },
+        { "name": "subject", "label": "Subject", "type": "text", "required": false },
+        { "name": "message", "label": "Message", "type": "textarea", "required": true }
+      ],
+      "submitText": "Send",
+      "successMessage": "Thanks for reaching out. We will get back to you."
+    }
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/electlisacallan",
+    "instagram": "https://www.instagram.com/electlisacallan",
+    "twitter": "",
+    "tiktok": "",
+    "youtube": ""
+  },
+  "footer": {
+    "paidFor": "Paid for by Friends of Lisa Callan, PO Box 3203, Issaquah, WA 98027",
+    "disclaimer": "Top 5 contributors available at pdc.wa.gov.",
+    "extraLinks": [
+      { "label": "Privacy", "href": "#" },
+      { "label": "Contact", "href": "#contact" }
+    ]
+  }
+}

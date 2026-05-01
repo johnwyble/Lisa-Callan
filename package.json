@@ -1,0 +1,13 @@
+{
+  "name": "callan-2026-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Lisa Callan for State Representative — 5th LD",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "npx http-server . -p 8000"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.0"
+  }
+}

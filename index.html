@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lisa Callan for State Representative</title>
+<meta name="description" content="Re-elect Lisa Callan for Washington State Representative, 5th Legislative District." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link id="google-fonts" rel="stylesheet" href="" />
+<style>
+  :root {
+    --primary: #186A3B;
+    --secondary: #1F8049;
+    --accent: #5B9BD5;
+    --background: #F8F9F6;
+    --surface: #FFFFFF;
+    --text: #1B1B1B;
+    --text-light: #FFFFFF;
+    --text-muted: #5C5C5C;
+    --font-heading: 'Archivo Black', system-ui, sans-serif;
+    --font-body: 'Work Sans', system-ui, sans-serif;
+    --section-padding: 5rem 0;
+    --photo-radius: 8px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-body);
+    color: var(--text);
+    background: var(--background);
+    line-height: 1.6;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    color: var(--primary);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+  h1 { font-size: clamp(2.4rem, 5vw, 4rem); }
+  h2 { font-size: clamp(1.9rem, 3.5vw, 2.6rem); margin-bottom: 1rem; }
+  h3 { font-size: 1.35rem; margin-bottom: 0.5rem; }
+  p { margin-bottom: 1rem; }
+  a { color: var(--primary); text-decoration: none; }
+  a:hover { color: var(--secondary); }
+  .container {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  .btn {
+    display: inline-block;
+    padding: 0.85rem 1.6rem;
+    border-radius: 4px;
+    font-weight: 700;
+    font-family: var(--font-body);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.95rem;
+    transition: transform 0.15s ease, background 0.15s ease;
+    border: 2px solid transparent;
+    cursor: pointer;
+  }
+  .btn-primary { background: var(--accent); color: var(--text); }
+  .btn-primary:hover { background: var(--primary); color: var(--text-light); transform: translateY(-1px); }
+  .btn-secondary { background: transparent; color: var(--text-light); border-color: var(--text-light); }
+  .btn-secondary:hover { background: var(--text-light); color: var(--primary); }
+  .btn-outline { background: transparent; color: var(--primary); border-color: var(--primary); }
+  .btn-outline:hover { background: var(--primary); color: var(--text-light); }
+
+  /* NAV */
+  nav.site-nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+    padding: 1rem 0;
+  }
+  nav.site-nav.transparent { background: transparent; }
+  nav.site-nav.transparent.scrolled {
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  nav.site-nav.solid { background: var(--primary); }
+  nav.site-nav .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 1rem;
+  }
+  nav.site-nav .logo {
+    display: flex; align-items: center; gap: 0.6rem;
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    color: var(--text-light);
+  }
+  nav.site-nav.transparent.scrolled .logo { color: var(--primary); }
+  nav.site-nav .logo img { height: 38px; width: auto; }
+  nav.site-nav ul {
+    list-style: none;
+    display: flex; gap: 1.6rem; align-items: center;
+  }
+  nav.site-nav ul a {
+    color: var(--text-light);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  nav.site-nav.transparent.scrolled ul a { color: var(--primary); }
+  nav.site-nav ul a:hover { color: var(--accent); }
+  nav.site-nav .nav-cta {
+    background: var(--accent);
+    color: var(--text);
+    padding: 0.55rem 1.1rem;
+    border-radius: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.85rem;
+  }
+  nav.site-nav .nav-cta:hover { background: var(--text-light); color: var(--primary); }
+  .nav-toggle {
+    display: none;
+    background: none; border: none; color: var(--text-light);
+    font-size: 1.6rem; cursor: pointer;
+  }
+  nav.site-nav.transparent.scrolled .nav-toggle { color: var(--primary); }
+
+  /* HERO */
+  .hero { position: relative; padding-top: 80px; }
+  .hero.full-bleed {
+    min-height: 90vh;
+    background-size: cover;
+    background-position: center;
+    display: flex; align-items: center;
+    color: var(--text-light);
+  }
+  .hero.full-bleed::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(0,0,0,0.55), rgba(0,0,0,0.25));
+  }
+  .hero.full-bleed .hero-content { position: relative; z-index: 1; max-width: 700px; }
+  .hero.full-bleed h1 { color: var(--text-light); }
+
+  .hero.split-left, .hero.split-right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 3rem;
+    padding: 6rem 0 4rem;
+  }
+  .hero.split-right { direction: ltr; }
+  .hero.split-left .hero-content, .hero.split-right .hero-content { padding: 0 1.5rem; }
+  .hero.split-left .hero-photo, .hero.split-right .hero-photo {
+    width: 100%; height: 580px;
+    background-size: cover; background-position: center;
+    border-radius: var(--photo-radius);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+  }
+  .hero.split-left .hero-photo { order: -1; }
+
+  .hero.centered {
+    background: var(--primary);
+    color: var(--text-light);
+    text-align: center;
+    padding: 8rem 1rem 6rem;
+  }
+  .hero.centered h1 { color: var(--text-light); }
+  .hero.centered .hero-content { max-width: 800px; margin: 0 auto; }
+
+  .hero.diagonal {
+    position: relative;
+    min-height: 80vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    overflow: hidden;
+  }
+  .hero.diagonal .hero-content { padding: 6rem 2rem 4rem 2rem; z-index: 2; }
+  .hero.diagonal .hero-photo {
+    background-size: cover; background-position: center;
+    height: 100%; min-height: 80vh;
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  .hero h1 { margin-bottom: 1rem; }
+  .hero .subheadline {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    font-weight: 500;
+  }
+  .hero.full-bleed .subheadline, .hero.centered .subheadline {
+    color: rgba(255,255,255,0.92);
+  }
+  .hero .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+  /* SECTIONS */
+  section { padding: var(--section-padding); }
+  .section-spacing-compact { --section-padding: 3.5rem 0; }
+  .section-spacing-default { --section-padding: 5rem 0; }
+  .section-spacing-generous { --section-padding: 7rem 0; }
+  .section-eyebrow {
+    color: var(--accent);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+  }
+  .section-headline { margin-bottom: 1.5rem; max-width: 780px; }
+  .section-intro { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2.5rem; max-width: 780px; }
+
+  /* ABOUT */
+  .about {
+    background: var(--surface);
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .about-photo {
+    width: 100%;
+    border-radius: var(--photo-radius);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  }
+  .photo-treatment-rounded .about-photo { border-radius: 50%; aspect-ratio: 1; object-fit: cover; }
+  .photo-treatment-square .about-photo { border-radius: 6px; }
+  .about-caption {
+    font-size: 0.9rem; color: var(--text-muted);
+    margin-top: 0.75rem; font-style: italic;
+  }
+  .about-body p { margin-bottom: 1rem; }
+
+  /* ISSUES */
+  .issues { background: var(--background); }
+  .issue-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .issue-card {
+    background: var(--surface);
+    padding: 1.75rem;
+    border-radius: 8px;
+    border-top: 4px solid var(--accent);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .issue-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  }
+  .issue-icon {
+    width: 44px; height: 44px;
+    background: var(--primary);
+    color: var(--text-light);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1rem;
+  }
+  .issue-icon svg { stroke: var(--text-light); }
+  .footer-social svg { stroke: currentColor; }
+  .issue-card h3 { color: var(--primary); }
+  .issue-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.55; margin-bottom: 0; }
+
+  /* ENDORSEMENTS */
+  .endorsements { background: var(--surface); }
+  .end-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .end-card {
+    background: var(--background);
+    padding: 1.75rem;
+    border-radius: 8px;
+    text-align: center;
+  }
+  .end-card .end-photo {
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    background: var(--primary);
+    color: var(--text-light);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    overflow: hidden;
+  }
+  .end-card .end-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .end-card .end-name { color: var(--primary); margin-bottom: 0.2rem; }
+  .end-card .end-title { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
+  .end-card .end-quote { color: var(--text); font-style: italic; font-size: 0.95rem; line-height: 1.5; }
+
+  .end-grid-style {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+  .end-grid-item {
+    background: var(--background);
+    padding: 1rem 1.2rem;
+    border-radius: 6px;
+    border-left: 3px solid var(--accent);
+  }
+  .end-grid-item .end-name { color: var(--primary); font-weight: 700; font-size: 0.95rem; }
+  .end-grid-item .end-title { color: var(--text-muted); font-size: 0.82rem; }
+
+  .end-quotes-featured { display: grid; gap: 1.5rem; margin: 2rem 0 2.5rem; }
+  .end-quote-block {
+    background: var(--background);
+    padding: 1.75rem 2rem;
+    border-left: 4px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+  }
+  .end-quote-block blockquote {
+    font-size: 1.1rem;
+    line-height: 1.55;
+    color: var(--text);
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
+  .end-quote-block .attribution {
+    font-family: var(--font-heading);
+    color: var(--primary);
+    font-size: 1rem;
+    font-style: normal;
+  }
+  .end-quote-block .attribution-title {
+    color: var(--text-muted);
+    font-weight: 400;
+    font-style: normal;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+  }
+  .end-others-list {
+    display: flex; flex-wrap: wrap; gap: 0.5rem 1.4rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0,0,0,0.08);
+  }
+  .end-others-list li { list-style: none; font-weight: 600; color: var(--primary); font-size: 0.95rem; }
+
+  .end-list-cols {
+    columns: 2;
+    column-gap: 3rem;
+    margin-top: 2rem;
+  }
+  .end-list-cols li {
+    list-style: none;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    break-inside: avoid;
+    color: var(--primary);
+    font-weight: 600;
+  }
+  .end-list-cols .end-title-inline { color: var(--text-muted); font-weight: 400; font-size: 0.88rem; }
+
+  /* FORMS */
+  .forms-section { background: var(--background); }
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    margin-top: 2rem;
+  }
+  .form-block {
+    background: var(--surface);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  }
+  .form-block h3 { margin-bottom: 0.5rem; }
+  .form-block .form-intro { color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem; }
+  .form-row { margin-bottom: 1rem; }
+  .form-row label {
+    display: block; font-weight: 600; color: var(--text);
+    font-size: 0.9rem; margin-bottom: 0.35rem;
+  }
+  .form-row input, .form-row select, .form-row textarea {
+    width: 100%;
+    padding: 0.7rem 0.9rem;
+    border: 1px solid #d8d8d2;
+    border-radius: 4px;
+    background: var(--background);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--text);
+  }
+  .form-row input:focus, .form-row select:focus, .form-row textarea:focus {
+    outline: 2px solid var(--accent);
+    border-color: var(--accent);
+  }
+  .form-row textarea { min-height: 100px; resize: vertical; }
+  .form-success {
+    display: none;
+    background: #e8f5ee;
+    border-left: 4px solid var(--primary);
+    color: var(--primary);
+    padding: 0.9rem 1.1rem;
+    border-radius: 4px;
+    margin-top: 1rem;
+  }
+  .form-success.show { display: block; }
+
+  /* FOOTER */
+  footer.site-footer {
+    background: var(--primary);
+    color: var(--text-light);
+    padding: 3rem 0 2rem;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+  .footer-brand { font-family: var(--font-heading); font-size: 1.4rem; margin-bottom: 0.5rem; }
+  .footer-disclaimer {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.85);
+  }
+  .footer-disclaimer p { margin-bottom: 0.4rem; }
+  .footer-social {
+    display: flex; gap: 0.75rem;
+    margin-top: 0.5rem;
+  }
+  .footer-social a {
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    color: var(--text-light);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+    transition: background 0.2s ease;
+  }
+  .footer-social a:hover { background: var(--accent); color: var(--text); }
+  .footer-links {
+    list-style: none;
+    display: flex; flex-direction: column; gap: 0.5rem;
+  }
+  .footer-links a { color: rgba(255,255,255,0.85); font-size: 0.92rem; }
+  .footer-links a:hover { color: var(--accent); }
+  .footer-bottom {
+    margin-top: 2rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    text-align: center;
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.7);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 880px) {
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.7rem; }
+    .nav-toggle { display: block; }
+    nav.site-nav ul {
+      position: fixed; top: 70px; left: 0; right: 0;
+      flex-direction: column;
+      background: var(--primary);
+      padding: 1.5rem;
+      gap: 1.2rem;
+      transform: translateY(-200%);
+      transition: transform 0.25s ease;
+    }
+    nav.site-nav ul.open { transform: translateY(0); }
+    nav.site-nav ul a { color: var(--text-light) !important; }
+    .hero.split-left, .hero.split-right { grid-template-columns: 1fr; gap: 2rem; padding: 5rem 0 3rem; }
+    .hero.split-left .hero-photo, .hero.split-right .hero-photo { height: 380px; }
+    .hero.diagonal { grid-template-columns: 1fr; }
+    .hero.diagonal .hero-photo { clip-path: none; min-height: 320px; }
+    .about-grid, .form-grid, .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .end-list-cols { columns: 1; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Hidden form elements for Netlify form detection -->
+<form name="volunteer" netlify netlify-honeypot="bot-field" hidden>
+  <input type="text" name="name" />
+  <input type="email" name="email" />
+  <input type="tel" name="phone" />
+  <input type="text" name="zip" />
+  <select name="interest"><option></option></select>
+  <textarea name="notes"></textarea>
+</form>
+<form name="contact" netlify netlify-honeypot="bot-field" hidden>
+  <input type="text" name="name" />
+  <input type="email" name="email" />
+  <input type="text" name="subject" />
+  <textarea name="message"></textarea>
+</form>
+<form name="rsvp" netlify netlify-honeypot="bot-field" hidden>
+  <input type="text" name="name" />
+  <input type="email" name="email" />
+  <input type="tel" name="phone" />
+  <input type="number" name="guests" />
+</form>
+
+<div id="app"></div>
+
+<script>
+const FONT_PAIRINGS = {
+  'playfair-source': { heading: "'Playfair Display', serif", body: "'Source Sans 3', sans-serif", url: 'family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700' },
+  'oswald-merriweather': { heading: "'Oswald', sans-serif", body: "'Merriweather', serif", url: 'family=Oswald:wght@500;600;700&family=Merriweather:wght@400;700' },
+  'dmserif-dmsans': { heading: "'DM Serif Display', serif", body: "'DM Sans', sans-serif", url: 'family=DM+Serif+Display&family=DM+Sans:wght@400;500;700' },
+  'bebas-opensans': { heading: "'Bebas Neue', sans-serif", body: "'Open Sans', sans-serif", url: 'family=Bebas+Neue&family=Open+Sans:wght@400;500;600;700' },
+  'cormorant-fira': { heading: "'Cormorant Garamond', serif", body: "'Fira Sans', sans-serif", url: 'family=Cormorant+Garamond:wght@600;700&family=Fira+Sans:wght@400;500;600;700' },
+  'sora-baskerville': { heading: "'Sora', sans-serif", body: "'Libre Baskerville', serif", url: 'family=Sora:wght@600;700;800&family=Libre+Baskerville:wght@400;700' },
+  'archivo-worksans': { heading: "'Archivo Black', sans-serif", body: "'Work Sans', sans-serif", url: 'family=Archivo+Black&family=Work+Sans:wght@400;500;600;700' },
+  'fraunces-commissioner': { heading: "'Fraunces', serif", body: "'Commissioner', sans-serif", url: 'family=Fraunces:wght@600;700;800&family=Commissioner:wght@400;500;600;700' },
+  'outfit-lora': { heading: "'Outfit', sans-serif", body: "'Lora', serif", url: 'family=Outfit:wght@600;700;800&family=Lora:wght@400;500;600' },
+  'vollkorn-karla': { heading: "'Vollkorn', serif", body: "'Karla', sans-serif", url: 'family=Vollkorn:wght@600;700&family=Karla:wght@400;500;600;700' }
+};
+
+const SVG = (path) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22" height="22">${path}</svg>`;
+const ICONS = {
+  school:    SVG('<path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>'),
+  heart:     SVG('<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>'),
+  home:      SVG('<path d="M3 12l9-9 9 9v9a2 2 0 0 1-2 2h-4v-7h-6v7H5a2 2 0 0 1-2-2z"/>'),
+  shield:    SVG('<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>'),
+  tools:     SVG('<path d="M14.7 6.3a4 4 0 1 1 5.6 5.6L9.5 22.8 2 22l-.8-7.5L12.1 3.7a4 4 0 0 1 2.6-1.4z"/>'),
+  leaf:      SVG('<path d="M5 21c.5-9 5-13 14-13 0 9-4 13.5-13 14l-1-1z"/><path d="M5 21c5-5 9-9 13-12"/>'),
+  house:     SVG('<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/>'),
+  chip:      SVG('<rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/>'),
+  vote:      SVG('<path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M9 13l2 2 4-4"/>'),
+  flag:      SVG('<path d="M4 22V4M4 4h13l-2 5 2 5H4"/>'),
+  briefcase: SVG('<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>')
+};
+
+const SOCIAL_ICONS = {
+  facebook:  SVG('<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>'),
+  instagram: SVG('<rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4a4 4 0 1 1-7.9 1.2 4 4 0 0 1 7.9-1.2z"/><path d="M17.5 6.5h.01"/>'),
+  twitter:   SVG('<path d="M22 5.8a8.5 8.5 0 0 1-2.4.7 4.2 4.2 0 0 0 1.8-2.3 8.4 8.4 0 0 1-2.6 1A4.2 4.2 0 0 0 11.5 9a11.9 11.9 0 0 1-8.7-4.4 4.2 4.2 0 0 0 1.3 5.6A4.2 4.2 0 0 1 2 9.6v.1a4.2 4.2 0 0 0 3.4 4.1 4.2 4.2 0 0 1-1.9.1 4.2 4.2 0 0 0 4 2.9A8.4 8.4 0 0 1 2 18.5a11.9 11.9 0 0 0 6.5 1.9c7.8 0 12-6.5 12-12.1v-.5A8.6 8.6 0 0 0 22 5.8z"/>'),
+  tiktok:    SVG('<path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>'),
+  youtube:   SVG('<path d="M22 7.6a2.5 2.5 0 0 0-1.8-1.8C18.5 5.4 12 5.4 12 5.4s-6.5 0-8.2.4A2.5 2.5 0 0 0 2 7.6 26 26 0 0 0 1.6 12 26 26 0 0 0 2 16.4a2.5 2.5 0 0 0 1.8 1.8c1.7.4 8.2.4 8.2.4s6.5 0 8.2-.4a2.5 2.5 0 0 0 1.8-1.8 26 26 0 0 0 .4-4.4 26 26 0 0 0-.4-4.4z"/><path d="M10 15.5l5-3.5-5-3.5z"/>')
+};
+
+function htmlEscape(s) {
+  return String(s == null ? '' : s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+
+function applyTheme(config) {
+  const c = config.style.colors || {};
+  const root = document.documentElement;
+  if (c.primary) root.style.setProperty('--primary', c.primary);
+  if (c.secondary) root.style.setProperty('--secondary', c.secondary);
+  if (c.accent) root.style.setProperty('--accent', c.accent);
+  if (c.background) root.style.setProperty('--background', c.background);
+  if (c.surface) root.style.setProperty('--surface', c.surface);
+  if (c.text) root.style.setProperty('--text', c.text);
+  if (c.textLight) root.style.setProperty('--text-light', c.textLight);
+  if (c.textMuted) root.style.setProperty('--text-muted', c.textMuted);
+
+  const pair = FONT_PAIRINGS[config.style.fontPairing] || FONT_PAIRINGS['archivo-worksans'];
+  document.getElementById('google-fonts').href = 'https://fonts.googleapis.com/css2?' + pair.url + '&display=swap';
+  root.style.setProperty('--font-heading', pair.heading);
+  root.style.setProperty('--font-body', pair.body);
+
+  const treatment = config.style.photoTreatment || 'rounded-corners';
+  document.body.classList.add('photo-treatment-' + treatment);
+  const spacing = config.style.sectionSpacing || 'default';
+  document.body.classList.add('section-spacing-' + spacing);
+}
+
+function renderNav(config) {
+  const navStyle = config.style.navStyle || 'transparent';
+  const links = (config.nav.links || []).map(l =>
+    `<li><a href="${htmlEscape(l.href)}">${htmlEscape(l.label)}</a></li>`
+  ).join('');
+  const cta = config.nav.ctaText
+    ? `<a href="${htmlEscape(config.nav.ctaLink || '#')}" class="nav-cta">${htmlEscape(config.nav.ctaText)}</a>`
+    : '';
+  const logoImg = config.nav.logo
+    ? `<img src="${htmlEscape(config.nav.logo)}" alt="${htmlEscape(config.site.candidateName)}" />`
+    : '';
+  return `
+  <nav class="site-nav ${navStyle}" id="siteNav">
+    <div class="container nav-inner">
+      <a href="#" class="logo">${logoImg}<span>${htmlEscape(config.nav.logoText || config.site.candidateName)}</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu" id="navToggle">&#9776;</button>
+      <ul id="navLinks">
+        ${links}
+        ${cta ? `<li>${cta}</li>` : ''}
+      </ul>
+    </div>
+  </nav>`;
+}
+
+function renderHero(config) {
+  const layout = config.style.heroLayout || 'split-right';
+  const h = config.hero || {};
+  const headline = h.headline || h.overlay || ('Re-elect ' + config.site.candidateName);
+  const sub = h.subheadline || config.site.tagline || '';
+  const ctas = `
+    <div class="hero-ctas">
+      ${h.ctaText ? `<a href="${htmlEscape(h.ctaLink || '#')}" class="btn btn-primary">${htmlEscape(h.ctaText)}</a>` : ''}
+      ${h.secondaryCta ? `<a href="${htmlEscape(h.secondaryCta.link || '#')}" class="btn ${layout === 'full-bleed' || layout === 'centered' ? 'btn-secondary' : 'btn-outline'}">${htmlEscape(h.secondaryCta.text)}</a>` : ''}
+    </div>`;
+  const content = `
+    <div class="hero-content">
+      <h1>${htmlEscape(headline)}</h1>
+      ${sub ? `<p class="subheadline">${htmlEscape(sub)}</p>` : ''}
+      ${ctas}
+    </div>`;
+  if (layout === 'full-bleed') {
+    return `<section class="hero full-bleed" id="hero" style="background-image:url('${htmlEscape(h.image || '')}')">
+      <div class="container">${content}</div>
+    </section>`;
+  }
+  if (layout === 'centered') {
+    return `<section class="hero centered" id="hero">
+      <div class="container">${content}</div>
+    </section>`;
+  }
+  if (layout === 'diagonal') {
+    return `<section class="hero diagonal" id="hero">
+      <div>${content}</div>
+      <div class="hero-photo" style="background-image:url('${htmlEscape(h.image || '')}')"></div>
+    </section>`;
+  }
+  // split-left or split-right
+  return `<section class="hero ${layout}" id="hero">
+    ${content}
+    <div class="hero-photo" style="background-image:url('${htmlEscape(h.image || '')}')"></div>
+  </section>`;
+}
+
+function renderAbout(config) {
+  const a = config.about || {};
+  const body = (a.body || '').split('\n').filter(p => p.trim()).map(p => `<p>${htmlEscape(p)}</p>`).join('');
+  return `
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-body">
+          ${a.sectionTitle ? `<div class="section-eyebrow">${htmlEscape(a.sectionTitle)}</div>` : ''}
+          <h2 class="section-headline">${htmlEscape(a.headline || '')}</h2>
+          ${body}
+        </div>
+        <div>
+          ${a.photo ? `<img class="about-photo" src="${htmlEscape(a.photo)}" alt="${htmlEscape(config.site.candidateName)}" />` : ''}
+          ${a.photoCaption ? `<p class="about-caption">${htmlEscape(a.photoCaption)}</p>` : ''}
+        </div>
+      </div>
+    </div>
+  </section>`;
+}
+
+function renderIssues(config) {
+  const i = config.issues || {};
+  const items = (i.items || []).map(item => `
+    <div class="issue-card">
+      <div class="issue-icon">${ICONS[item.icon] || ICONS.flag}</div>
+      <h3>${htmlEscape(item.title)}</h3>
+      <p>${htmlEscape(item.description)}</p>
+    </div>`).join('');
+  return `
+  <section class="issues" id="issues">
+    <div class="container">
+      ${i.sectionTitle ? `<div class="section-eyebrow">${htmlEscape(i.sectionTitle)}</div>` : ''}
+      <h2 class="section-headline">${htmlEscape(i.headline || '')}</h2>
+      ${i.intro ? `<p class="section-intro">${htmlEscape(i.intro)}</p>` : ''}
+      <div class="issue-grid">${items}</div>
+    </div>
+  </section>`;
+}
+
+function renderEndorsements(config) {
+  const e = config.endorsements || {};
+  const style = config.style.endorsementStyle || 'cards';
+  const items = e.items || [];
+  let body = '';
+
+  if (style === 'cards') {
+    body = `<div class="end-cards">${items.map(it => {
+      const initial = (it.name || '?').trim().charAt(0);
+      const photo = it.photo
+        ? `<div class="end-photo"><img src="${htmlEscape(it.photo)}" alt="${htmlEscape(it.name)}" /></div>`
+        : `<div class="end-photo">${htmlEscape(initial)}</div>`;
+      return `<div class="end-card">
+        ${photo}
+        <h3 class="end-name">${htmlEscape(it.name)}</h3>
+        ${it.title ? `<div class="end-title">${htmlEscape(it.title)}</div>` : ''}
+        ${it.quote ? `<p class="end-quote">&ldquo;${htmlEscape(it.quote)}&rdquo;</p>` : ''}
+      </div>`;
+    }).join('')}</div>`;
+  } else if (style === 'grid') {
+    body = `<div class="end-grid-style">${items.map(it => `
+      <div class="end-grid-item">
+        <div class="end-name">${htmlEscape(it.name)}</div>
+        ${it.title ? `<div class="end-title">${htmlEscape(it.title)}</div>` : ''}
+      </div>`).join('')}</div>`;
+  } else if (style === 'list') {
+    body = `<ul class="end-list-cols">${items.map(it => `
+      <li>${htmlEscape(it.name)}${it.title ? ` <span class="end-title-inline">— ${htmlEscape(it.title)}</span>` : ''}</li>`).join('')}</ul>`;
+  } else { // quotes
+    const featured = items.filter(it => it.quote);
+    const others = items.filter(it => !it.quote);
+    body = `
+      <div class="end-quotes-featured">
+        ${featured.map(it => `
+          <div class="end-quote-block">
+            <blockquote>&ldquo;${htmlEscape(it.quote)}&rdquo;</blockquote>
+            <div class="attribution">${htmlEscape(it.name)}${it.title ? ` <span class="attribution-title">— ${htmlEscape(it.title)}</span>` : ''}</div>
+          </div>`).join('')}
+      </div>
+      ${others.length ? `<ul class="end-others-list">${others.map(it => `<li>${htmlEscape(it.name)}${it.title ? ` <span style="font-weight:400;color:var(--text-muted);font-size:0.88rem">— ${htmlEscape(it.title)}</span>` : ''}</li>`).join('')}</ul>` : ''}`;
+  }
+
+  return `
+  <section class="endorsements" id="endorsements">
+    <div class="container">
+      ${e.sectionTitle ? `<div class="section-eyebrow">${htmlEscape(e.sectionTitle)}</div>` : ''}
+      <h2 class="section-headline">${htmlEscape(e.headline || '')}</h2>
+      ${body}
+    </div>
+  </section>`;
+}
+
+function renderField(field) {
+  const required = field.required ? 'required' : '';
+  if (field.type === 'textarea') {
+    return `<div class="form-row">
+      <label for="f-${field.name}">${htmlEscape(field.label)}${field.required ? ' *' : ''}</label>
+      <textarea id="f-${field.name}" name="${htmlEscape(field.name)}" ${required}></textarea>
+    </div>`;
+  }
+  if (field.type === 'select') {
+    const opts = (field.options || []).map(o => `<option value="${htmlEscape(o)}">${htmlEscape(o)}</option>`).join('');
+    return `<div class="form-row">
+      <label for="f-${field.name}">${htmlEscape(field.label)}${field.required ? ' *' : ''}</label>
+      <select id="f-${field.name}" name="${htmlEscape(field.name)}" ${required}><option value="">-- Select --</option>${opts}</select>
+    </div>`;
+  }
+  return `<div class="form-row">
+    <label for="f-${field.name}">${htmlEscape(field.label)}${field.required ? ' *' : ''}</label>
+    <input id="f-${field.name}" name="${htmlEscape(field.name)}" type="${htmlEscape(field.type || 'text')}" ${required} />
+  </div>`;
+}
+
+function renderForm(form, anchorId) {
+  const fields = (form.fields || []).map(renderField).join('');
+  return `
+  <div class="form-block" id="${htmlEscape(anchorId)}">
+    ${form.sectionTitle ? `<div class="section-eyebrow">${htmlEscape(form.sectionTitle)}</div>` : ''}
+    <h3>${htmlEscape(form.headline || '')}</h3>
+    ${form.intro ? `<p class="form-intro">${htmlEscape(form.intro)}</p>` : ''}
+    <form name="${htmlEscape(form.formName)}" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-success="${htmlEscape(form.successMessage || 'Thanks!')}" onsubmit="return handleFormSubmit(event)">
+      <input type="hidden" name="form-name" value="${htmlEscape(form.formName)}" />
+      <p style="display:none"><label>Don't fill: <input name="bot-field" /></label></p>
+      ${fields}
+      <button type="submit" class="btn btn-primary">${htmlEscape(form.submitText || 'Submit')}</button>
+      <div class="form-success">${htmlEscape(form.successMessage || 'Thanks!')}</div>
+    </form>
+  </div>`;
+}
+
+function renderForms(config) {
+  const forms = config.forms || {};
+  const anchorIds = { volunteer: 'volunteer', contact: 'contact', rsvp: 'rsvp' };
+  const blocks = [];
+  if (forms.volunteer) blocks.push(renderForm(forms.volunteer, 'volunteer'));
+  if (forms.contact) blocks.push(renderForm(forms.contact, 'contact'));
+  if (forms.rsvp) blocks.push(renderForm(forms.rsvp, 'rsvp'));
+  if (!blocks.length) return '';
+  return `
+  <section class="forms-section" id="get-involved">
+    <div class="container">
+      <div class="form-grid">${blocks.join('')}</div>
+    </div>
+  </section>`;
+}
+
+function renderFooter(config) {
+  const f = config.footer || {};
+  const social = config.social || {};
+  const socialLinks = Object.entries(social)
+    .filter(([k, v]) => v)
+    .map(([k, v]) => `<a href="${htmlEscape(v)}" aria-label="${htmlEscape(k)}" target="_blank" rel="noopener">${SOCIAL_ICONS[k] || '\u{1F517}'}</a>`)
+    .join('');
+  const extra = (f.extraLinks || []).map(l => `<li><a href="${htmlEscape(l.href)}">${htmlEscape(l.label)}</a></li>`).join('');
+  return `
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">${htmlEscape(config.site.candidateName)}</div>
+          <div class="footer-disclaimer">
+            ${f.paidFor ? `<p>${htmlEscape(f.paidFor)}</p>` : ''}
+            ${f.disclaimer ? `<p>${htmlEscape(f.disclaimer)}</p>` : ''}
+          </div>
+          ${socialLinks ? `<div class="footer-social">${socialLinks}</div>` : ''}
+        </div>
+        <div>
+          ${extra ? `<ul class="footer-links">${extra}</ul>` : ''}
+        </div>
+      </div>
+      <div class="footer-bottom">&copy; ${new Date().getFullYear()} ${htmlEscape(config.site.candidateName)} for ${htmlEscape(config.site.office || '')}.</div>
+    </div>
+  </footer>`;
+}
+
+const RENDERERS = {
+  hero: renderHero,
+  about: renderAbout,
+  issues: renderIssues,
+  endorsements: renderEndorsements,
+  volunteer: renderForms,
+  contact: () => '' // forms render together
+};
+
+function render(config) {
+  applyTheme(config);
+  document.title = config.site.candidateName + ' for ' + (config.site.office || 'Office');
+  const meta = document.querySelector('meta[name="description"]');
+  if (meta && config.site.metaDescription) meta.setAttribute('content', config.site.metaDescription);
+
+  const order = config.sectionOrder || ['hero', 'about', 'issues', 'endorsements', 'volunteer', 'contact'];
+  const seen = new Set();
+  const sections = order.map(key => {
+    if (key === 'volunteer' || key === 'contact') {
+      if (seen.has('forms')) return '';
+      seen.add('forms');
+      return renderForms(config);
+    }
+    const fn = RENDERERS[key];
+    return fn ? fn(config) : '';
+  }).join('');
+
+  document.getElementById('app').innerHTML = renderNav(config) + sections + renderFooter(config);
+  setupNavBehavior();
+}
+
+function setupNavBehavior() {
+  const nav = document.getElementById('siteNav');
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  if (toggle && links) {
+    toggle.addEventListener('click', () => links.classList.toggle('open'));
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+  }
+  window.addEventListener('scroll', () => {
+    if (!nav) return;
+    if (window.scrollY > 30) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  });
+}
+
+function handleFormSubmit(e) {
+  // Let Netlify handle the actual POST; show success message inline.
+  const form = e.target;
+  const successEl = form.querySelector('.form-success');
+  // For local dev fallback, prevent default and just show success.
+  if (location.hostname === '' || location.protocol === 'file:') {
+    e.preventDefault();
+    if (successEl) successEl.classList.add('show');
+    form.reset();
+    return false;
+  }
+  // On Netlify, default submit. Show success after slight delay.
+  setTimeout(() => {
+    if (successEl) successEl.classList.add('show');
+  }, 100);
+  return true;
+}
+
+fetch('site-config.json')
+  .then(r => r.json())
+  .then(render)
+  .catch(err => {
+    document.getElementById('app').innerHTML = '<div style="padding:4rem 2rem;text-align:center;color:#900"><h1>Site config failed to load</h1><p>' + err.message + '</p></div>';
+  });
+</script>
+</body>
+</html>
