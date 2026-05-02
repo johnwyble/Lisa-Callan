@@ -185,6 +185,17 @@
     clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
   }
 
+  .hero-logo {
+    display: block;
+    max-width: 360px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 6px 14px rgba(0,0,0,0.12));
+  }
+  .hero.centered .hero-logo, .hero.full-bleed .hero-logo {
+    margin-left: auto; margin-right: auto;
+  }
   .hero h1 { margin-bottom: 1rem; }
   .hero .subheadline {
     font-size: 1.25rem;
@@ -477,6 +488,7 @@
     nav.site-nav ul a { color: var(--text-light) !important; }
     .hero.split-left, .hero.split-right { grid-template-columns: 1fr; gap: 2rem; padding: 5rem 0 3rem; }
     .hero.split-left .hero-photo, .hero.split-right .hero-photo { height: 380px; }
+    .hero-logo { max-width: 240px; }
     .hero.diagonal { grid-template-columns: 1fr; }
     .hero.diagonal .hero-photo { clip-path: none; min-height: 320px; }
     .about-grid, .form-grid, .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
@@ -610,8 +622,12 @@ function renderHero(config) {
       ${h.ctaText ? `<a href="${htmlEscape(h.ctaLink || '#')}" class="btn btn-primary">${htmlEscape(h.ctaText)}</a>` : ''}
       ${h.secondaryCta ? `<a href="${htmlEscape(h.secondaryCta.link || '#')}" class="btn ${layout === 'full-bleed' || layout === 'centered' ? 'btn-secondary' : 'btn-outline'}">${htmlEscape(h.secondaryCta.text)}</a>` : ''}
     </div>`;
+  const heroLogo = config.nav && config.nav.logo
+    ? `<img class="hero-logo" src="${htmlEscape(config.nav.logo)}" alt="${htmlEscape(config.site.candidateName)} for ${htmlEscape(config.site.office || '')}" />`
+    : '';
   const content = `
     <div class="hero-content">
+      ${heroLogo}
       <h1>${htmlEscape(headline)}</h1>
       ${sub ? `<p class="subheadline">${htmlEscape(sub)}</p>` : ''}
       ${ctas}
