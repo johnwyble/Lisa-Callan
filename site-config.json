@@ -105,7 +105,7 @@
   },
   "endorsements": {
     "sectionTitle": "Endorsements",
-    "headline": "The people who know the work, behind it.",
+    "headline": "The people who know the work, Stand with Lisa.",
     "items": [
       {
         "name": "Seattle Times Editorial Board",
@@ -119,31 +119,12 @@
         "quote": "Lisa Callan is the legislator Washington kids needed in this seat.",
         "photo": ""
       },
-      { "name": "Sen. Bill Ramos", "title": "Washington State Senate", "quote": "", "photo": "" },
       {
         "name": "King County Councilmember Sarah Perry",
         "title": "King County Council, District 3",
         "quote": "I've watched Lisa build the budget that pays for what East King County needs. She is the right person for this job.",
         "photo": ""
-      },
-      { "name": "Washington Education Association (WEA)", "title": "", "quote": "", "photo": "" },
-      { "name": "Washington State Labor Council", "title": "", "quote": "", "photo": "" },
-      { "name": "Washington Federation of State Employees / Council 28", "title": "", "quote": "", "photo": "" },
-      { "name": "IAM District Lodge 751", "title": "", "quote": "", "photo": "" },
-      { "name": "IBEW", "title": "", "quote": "", "photo": "" },
-      { "name": "Carpenters", "title": "", "quote": "", "photo": "" },
-      { "name": "Laborers", "title": "", "quote": "", "photo": "" },
-      { "name": "UA Local 32", "title": "", "quote": "", "photo": "" },
-      { "name": "WAFOP", "title": "Fraternal Order of Police", "quote": "", "photo": "" },
-      { "name": "UFCW 3000", "title": "", "quote": "", "photo": "" },
-      { "name": "SEIU 925", "title": "", "quote": "", "photo": "" },
-      { "name": "SEIU 775", "title": "", "quote": "", "photo": "" },
-      { "name": "AFT-Washington", "title": "", "quote": "", "photo": "" },
-      { "name": "Washington Conservation Action", "title": "", "quote": "", "photo": "" },
-      { "name": "Planned Parenthood Alliance Advocates", "title": "", "quote": "", "photo": "" },
-      { "name": "Pro-Choice Washington", "title": "", "quote": "", "photo": "" },
-      { "name": "Alliance for Gun Responsibility", "title": "", "quote": "", "photo": "" },
-      { "name": "APACE", "title": "", "quote": "", "photo": "" }
+      }
     ]
   },
   "forms": {
