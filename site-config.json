@@ -34,7 +34,7 @@
       { "label": "Contact", "href": "#contact" }
     ],
     "ctaText": "Donate",
-    "ctaLink": "https://secure.actblue.com/donate/lisa-callan"
+    "ctaLink": "https://secure.actblue.com/donate/friends-of-lisa-callan-1"
   },
   "sectionOrder": ["hero", "about", "issues", "endorsements", "volunteer", "contact"],
   "hero": {
@@ -46,7 +46,7 @@
     "ctaLink": "#volunteer",
     "secondaryCta": {
       "text": "Donate",
-      "link": "https://secure.actblue.com/donate/lisa-callan"
+      "link": "https://secure.actblue.com/donate/friends-of-lisa-callan-1"
     }
   },
   "about": {
