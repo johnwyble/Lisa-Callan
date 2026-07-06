@@ -375,6 +375,71 @@
   }
   .end-list-cols .end-title-inline { color: var(--text-muted); font-weight: 400; font-size: 0.88rem; }
 
+  /* ENDORSEMENT TILES (full-brand) */
+  .end-tiles {
+    columns: 3;
+    column-gap: 1.25rem;
+    margin-top: 2.25rem;
+  }
+  .end-tile {
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    background: var(--primary);
+    color: var(--text-light);
+    border-radius: 10px;
+    padding: 1.5rem 1.6rem 1.7rem;
+    margin: 0 0 1.25rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+  }
+  /* Washington state shape from the logo, as a watermark */
+  .end-tile::after {
+    content: "";
+    position: absolute;
+    right: -34px; bottom: -30px;
+    width: 168px; height: 112px;
+    background: url('images/wa-shape-white.png') no-repeat center / contain;
+    opacity: 0.09;
+    pointer-events: none;
+  }
+  /* Blue accent bar, echoing the logo's label bars */
+  .end-tile .tile-bar {
+    display: block;
+    width: 46px; height: 7px;
+    background: var(--accent);
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  .end-tile .tile-name {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 1.12;
+    color: var(--text-light);
+    margin: 0 0 0.25rem;
+    position: relative;
+  }
+  .end-tile .tile-title {
+    font-size: 0.9rem;
+    line-height: 1.35;
+    color: rgba(255,255,255,0.82);
+    position: relative;
+  }
+  .end-tile .tile-quote {
+    margin: 1rem 0 0;
+    padding-left: 0.9rem;
+    border-left: 3px solid var(--accent);
+    font-size: 0.98rem;
+    line-height: 1.5;
+    font-style: italic;
+    color: rgba(255,255,255,0.95);
+    position: relative;
+  }
+  @media (max-width: 900px) { .end-tiles { columns: 2; } }
+  @media (max-width: 600px) { .end-tiles { columns: 1; } }
+
   /* FORMS */
   .forms-section { background: var(--background); }
   .form-grid {
@@ -714,6 +779,14 @@ function renderEndorsements(config) {
         ${it.quote ? `<p class="end-quote">&ldquo;${htmlEscape(it.quote)}&rdquo;</p>` : ''}
       </div>`;
     }).join('')}</div>`;
+  } else if (style === 'tiles') {
+    body = `<div class="end-tiles">${items.map(it => `
+      <div class="end-tile">
+        <span class="tile-bar"></span>
+        <div class="tile-name">${htmlEscape(it.name)}</div>
+        ${it.title ? `<div class="tile-title">${htmlEscape(it.title)}</div>` : ''}
+        ${it.quote ? `<p class="tile-quote">&ldquo;${htmlEscape(it.quote)}&rdquo;</p>` : ''}
+      </div>`).join('')}</div>`;
   } else if (style === 'grid') {
     body = `<div class="end-grid-style">${items.map(it => `
       <div class="end-grid-item">
@@ -734,7 +807,12 @@ function renderEndorsements(config) {
             <div class="attribution">${htmlEscape(it.name)}${it.title ? ` <span class="attribution-title">— ${htmlEscape(it.title)}</span>` : ''}</div>
           </div>`).join('')}
       </div>
-      ${others.length ? `<ul class="end-others-list">${others.map(it => `<li>${htmlEscape(it.name)}${it.title ? ` <span style="font-weight:400;color:var(--text-muted);font-size:0.88rem">— ${htmlEscape(it.title)}</span>` : ''}</li>`).join('')}</ul>` : ''}`;
+      ${others.length ? `<div class="end-tiles">${others.map(it => `
+        <div class="end-tile">
+          <span class="tile-bar"></span>
+          <div class="tile-name">${htmlEscape(it.name)}</div>
+          ${it.title ? `<div class="tile-title">${htmlEscape(it.title)}</div>` : ''}
+        </div>`).join('')}</div>` : ''}`;
   }
 
   return `
