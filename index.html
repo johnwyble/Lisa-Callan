@@ -535,6 +535,22 @@
     color: rgba(255,255,255,0.7);
   }
 
+  /* LEGAL (privacy / terms / SMS consent) */
+  .footer-sms { font-size: 0.8rem; color: rgba(255,255,255,0.75); margin-top: 0.4rem; }
+  .consent { font-size: 0.8rem; line-height: 1.5; color: var(--text-muted); margin: 0.25rem 0 1rem; }
+  .consent a { color: var(--primary); text-decoration: underline; }
+  .legal-page { padding: 8rem 0 4rem; background: var(--background); }
+  .legal-page .legal-wrap { max-width: 820px; }
+  .legal-page h1 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 0.4rem; }
+  .legal-page .legal-sub { color: var(--text-muted); font-size: 1.1rem; font-weight: 500; margin-bottom: 1rem; }
+  .legal-page .legal-rule { display: block; width: 56px; height: 7px; background: var(--accent); border-radius: 3px; margin-bottom: 2.25rem; }
+  .legal-page h2 { font-size: 1.3rem; margin: 2rem 0 0.5rem; color: var(--primary); }
+  .legal-page p { color: var(--text); }
+  .legal-page p a { text-decoration: underline; }
+  .legal-meta { background: var(--surface); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 1.1rem 1.4rem; margin-top: 2.5rem; font-size: 0.95rem; }
+  .legal-meta p { margin-bottom: 0.3rem; }
+  .legal-back { display: inline-block; margin-top: 2rem; font-weight: 600; }
+
   /* RESPONSIVE */
   @media (max-width: 880px) {
     h1 { font-size: 2.2rem; }
@@ -630,6 +646,50 @@ function htmlEscape(s) {
     .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
+function linkify(s) {
+  return htmlEscape(s).replace(/\[([^\]]+)\]\((\/[^)\s]*)\)/g, '<a href="$2">$1</a>');
+}
+
+// Legal pages: /privacy and /terms (via _redirects) or ?page=privacy for local preview.
+const PAGE = (function () {
+  const seg = location.pathname.replace(/\/+$/, '').split('/').pop().replace(/\.html$/, '');
+  if (seg === 'privacy' || seg === 'terms') return seg;
+  const q = new URLSearchParams(location.search).get('page');
+  return (q === 'privacy' || q === 'terms') ? q : null;
+})();
+if (PAGE && location.protocol !== 'file:') {
+  const b = document.createElement('base'); b.href = '/';
+  document.head.insertBefore(b, document.head.firstChild);
+}
+let LEGAL = {};
+
+function consentHtml(form) {
+  const hasTel = (form.fields || []).some(f => f.type === 'tel');
+  if (!hasTel || !LEGAL.smsDisclosure) return '';
+  const links = (LEGAL.links || []).map(l => `<a href="${htmlEscape(l.href)}">${htmlEscape(l.label)}</a>`).join(' · ');
+  return `<p class="consent">${linkify(LEGAL.smsDisclosure)}${links ? ' ' + links : ''}</p>`;
+}
+
+function renderLegal(config, key) {
+  const p = LEGAL.pages[key];
+  const secs = (p.sections || []).map(s => `<h2>${htmlEscape(s.heading)}</h2>` +
+    String(s.body || '').split('\n').filter(x => x.trim()).map(x => `<p>${linkify(x)}</p>`).join('')).join('');
+  return `
+  <section class="legal-page" id="legal">
+    <div class="container legal-wrap">
+      <h1>${htmlEscape(p.title)}</h1>
+      ${p.subtitle ? `<p class="legal-sub">${htmlEscape(p.subtitle)}</p>` : ''}
+      <span class="legal-rule"></span>
+      ${secs}
+      <div class="legal-meta">
+        ${p.contact ? `<p><strong>Contact:</strong> ${htmlEscape(p.contact)}</p>` : ''}
+        ${p.lastUpdated ? `<p>${htmlEscape(p.lastUpdated)}</p>` : ''}
+      </div>
+      <a class="legal-back" href="/">&larr; Back to ${htmlEscape(config.site.candidateName)}</a>
+    </div>
+  </section>`;
+}
+
 function applyTheme(config) {
   const c = config.style.colors || {};
   const root = document.documentElement;
@@ -667,7 +727,7 @@ function renderNav(config) {
   return `
   <nav class="site-nav ${navStyle}" id="siteNav">
     <div class="container nav-inner">
-      <a href="#" class="logo">${logoImg}<span>${htmlEscape(config.nav.logoText || config.site.candidateName)}</span></a>
+      <a href="${PAGE ? '/' : '#'}" class="logo">${logoImg}<span>${htmlEscape(config.nav.logoText || config.site.candidateName)}</span></a>
       <button class="nav-toggle" aria-label="Toggle menu" id="navToggle">&#9776;</button>
       <ul id="navLinks">
         ${links}
@@ -857,6 +917,7 @@ function renderForm(form, anchorId) {
       <input type="hidden" name="form-name" value="${htmlEscape(form.formName)}" />
       <p style="display:none"><label>Don't fill: <input name="bot-field" /></label></p>
       ${fields}
+      ${consentHtml(form)}
       <button type="submit" class="btn btn-primary">${htmlEscape(form.submitText || 'Submit')}</button>
       <div class="form-success">${htmlEscape(form.successMessage || 'Thanks!')}</div>
     </form>
@@ -896,6 +957,7 @@ function renderFooter(config) {
           <div class="footer-disclaimer">
             ${f.paidFor ? `<p>${htmlEscape(f.paidFor)}</p>` : ''}
             ${f.disclaimer ? `<p>${htmlEscape(f.disclaimer)}</p>` : ''}
+            ${LEGAL.smsDisclosure ? `<p class="footer-sms">${linkify(LEGAL.smsDisclosure)}</p>` : ''}
           </div>
           ${socialLinks ? `<div class="footer-social">${socialLinks}</div>` : ''}
         </div>
@@ -918,7 +980,15 @@ const RENDERERS = {
 };
 
 function render(config) {
+  LEGAL = config.legal || {};
   applyTheme(config);
+  if (PAGE && LEGAL.pages && LEGAL.pages[PAGE]) {
+    const lp = LEGAL.pages[PAGE];
+    document.title = lp.metaTitle || lp.title;
+    document.getElementById('app').innerHTML = renderNav(config) + renderLegal(config, PAGE) + renderFooter(config);
+    setupNavBehavior();
+    return;
+  }
   document.title = config.site.candidateName + ' for ' + (config.site.office || 'Office');
   const meta = document.querySelector('meta[name="description"]');
   if (meta && config.site.metaDescription) meta.setAttribute('content', config.site.metaDescription);

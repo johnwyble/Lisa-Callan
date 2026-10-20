@@ -27,16 +27,38 @@
     "logo": "images/logo.png",
     "logoText": "Lisa Callan",
     "links": [
-      { "label": "About", "href": "#about" },
-      { "label": "Record", "href": "#issues" },
-      { "label": "Endorsements", "href": "#endorsements" },
-      { "label": "Volunteer", "href": "#volunteer" },
-      { "label": "Contact", "href": "#contact" }
+      {
+        "label": "About",
+        "href": "#about"
+      },
+      {
+        "label": "Record",
+        "href": "#issues"
+      },
+      {
+        "label": "Endorsements",
+        "href": "#endorsements"
+      },
+      {
+        "label": "Volunteer",
+        "href": "#volunteer"
+      },
+      {
+        "label": "Contact",
+        "href": "#contact"
+      }
     ],
     "ctaText": "Donate",
     "ctaLink": "https://secure.actblue.com/donate/friends-of-lisa-callan-1"
   },
-  "sectionOrder": ["hero", "about", "issues", "endorsements", "volunteer", "contact"],
+  "sectionOrder": [
+    "hero",
+    "about",
+    "issues",
+    "endorsements",
+    "volunteer",
+    "contact"
+  ],
   "hero": {
     "image": "images/hero-callan.jpg",
     "overlay": "Re-elect Lisa Callan",
@@ -218,10 +240,30 @@
       "headline": "Sign up to help.",
       "intro": "Doors, phones, postcards, and yard signs. Tell us what fits your week.",
       "fields": [
-        { "name": "name", "label": "Name", "type": "text", "required": true },
-        { "name": "email", "label": "Email", "type": "email", "required": true },
-        { "name": "phone", "label": "Phone", "type": "tel", "required": false },
-        { "name": "zip", "label": "ZIP code", "type": "text", "required": false },
+        {
+          "name": "name",
+          "label": "Name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "email",
+          "label": "Email",
+          "type": "email",
+          "required": true
+        },
+        {
+          "name": "phone",
+          "label": "Phone",
+          "type": "tel",
+          "required": false
+        },
+        {
+          "name": "zip",
+          "label": "ZIP code",
+          "type": "text",
+          "required": false
+        },
         {
           "name": "interest",
           "label": "How would you like to help?",
@@ -236,7 +278,12 @@
             "Wherever you need me"
           ]
         },
-        { "name": "notes", "label": "Anything else we should know?", "type": "textarea", "required": false }
+        {
+          "name": "notes",
+          "label": "Anything else we should know?",
+          "type": "textarea",
+          "required": false
+        }
       ],
       "submitText": "Sign me up",
       "successMessage": "Thank you. The campaign will be in touch soon."
@@ -247,10 +294,30 @@
       "headline": "Get in touch with the campaign.",
       "intro": "Press, scheduling, endorsement requests, or anything else.",
       "fields": [
-        { "name": "name", "label": "Name", "type": "text", "required": true },
-        { "name": "email", "label": "Email", "type": "email", "required": true },
-        { "name": "subject", "label": "Subject", "type": "text", "required": false },
-        { "name": "message", "label": "Message", "type": "textarea", "required": true }
+        {
+          "name": "name",
+          "label": "Name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "email",
+          "label": "Email",
+          "type": "email",
+          "required": true
+        },
+        {
+          "name": "subject",
+          "label": "Subject",
+          "type": "text",
+          "required": false
+        },
+        {
+          "name": "message",
+          "label": "Message",
+          "type": "textarea",
+          "required": true
+        }
       ],
       "submitText": "Send",
       "successMessage": "Thanks for reaching out. We will get back to you."
@@ -267,8 +334,108 @@
     "paidFor": "Paid for by Friends of Lisa Callan, PO Box 3203, Issaquah, WA 98027",
     "disclaimer": "Top 5 contributors available at pdc.wa.gov.",
     "extraLinks": [
-      { "label": "Privacy", "href": "#" },
-      { "label": "Contact", "href": "#contact" }
+      {
+        "label": "Privacy Policy",
+        "href": "/privacy"
+      },
+      {
+        "label": "SMS Terms & Conditions",
+        "href": "/terms"
+      },
+      {
+        "label": "Contact",
+        "href": "#contact"
+      }
     ]
+  },
+  "legal": {
+    "_note": "smsDisclosure prints in the footer and under every form with a phone field. pages.* render at /privacy and /terms. [text](/path) makes a link.",
+    "smsDisclosure": "Friends of Lisa Callan may contact supporters and voters by text message for outreach, get-out-the-vote, and volunteer recruitment. Message and data rates may apply. Message frequency varies. Reply STOP to opt out at any time, or HELP for help. We do not sell or share your phone number with third parties for their own marketing. Questions: elect.lisacallan@gmail.com.",
+    "links": [
+      {
+        "label": "Privacy Policy",
+        "href": "/privacy"
+      },
+      {
+        "label": "SMS Terms & Conditions",
+        "href": "/terms"
+      }
+    ],
+    "pages": {
+      "privacy": {
+        "title": "Privacy Policy",
+        "subtitle": "Friends of Lisa Callan",
+        "metaTitle": "Privacy Policy | Lisa Callan for State Representative",
+        "sections": [
+          {
+            "heading": "Collection of Information",
+            "body": "We collect personal information (including names, email addresses, phone numbers, and zip codes) through forms on our website such as contact forms, volunteer sign-ups, donation forms, and event registration forms. We only collect information that is necessary for the purpose it was provided for."
+          },
+          {
+            "heading": "Use of Information",
+            "body": "Information collected through our website is used to communicate with supporters about campaign updates, fundraising efforts, volunteer opportunities, events, and get-out-the-vote initiatives. We may also use this information to improve our outreach and personalize your experience on our website."
+          },
+          {
+            "heading": "Sharing of Information",
+            "body": "We do not sell, rent, or share your personal information with third parties or affiliates for marketing or promotional purposes. Information may be shared with third parties only when required by law, or with trusted vendors (such as fundraising platforms or compliance consultants) who support our campaign operations. Mobile opt-in information will not be shared with any third parties. Text messaging originator opt-in data and consent will not be shared with any third parties under any circumstances."
+          },
+          {
+            "heading": "Data Security",
+            "body": "We implement appropriate technical and organizational measures to protect your personal information from unauthorized access, use, disclosure, or destruction."
+          },
+          {
+            "heading": "Changes to This Policy",
+            "body": "We may update this Privacy Policy from time to time. Any changes will be posted on this page with a revised effective date."
+          },
+          {
+            "heading": "Contact Us",
+            "body": "If you have questions or concerns about this Privacy Policy, please contact us at elect.lisacallan@gmail.com."
+          }
+        ],
+        "contact": "Friends of Lisa Callan · PO Box 3203, Issaquah, WA 98027 · elect.lisacallan@gmail.com",
+        "lastUpdated": "Last updated: October 2026."
+      },
+      "terms": {
+        "title": "SMS Terms & Conditions",
+        "subtitle": "Text Messaging Program Terms of Service",
+        "metaTitle": "SMS Terms & Conditions | Lisa Callan for State Representative",
+        "sections": [
+          {
+            "heading": "1. Program description",
+            "body": "Friends of Lisa Callan (“we,” “us,” “our”) operates a text-messaging program to communicate with supporters and voters on behalf of Lisa Callan for Washington State House, 5th Legislative District, Position 2. Messages may include voter contact, get-out-the-vote reminders, election information, event invitations, and volunteer-recruitment outreach. We do not solicit donations by text."
+          },
+          {
+            "heading": "2. Message frequency",
+            "body": "Message frequency varies."
+          },
+          {
+            "heading": "3. Cost",
+            "body": "Message and data rates may apply, depending on your mobile carrier’s plan. Friends of Lisa Callan does not charge for the messages."
+          },
+          {
+            "heading": "4. Opt-out",
+            "body": "You can opt out at any time by replying STOP (or STOPALL, UNSUBSCRIBE, CANCEL, END, or QUIT) to any message. After you reply STOP, we will send one confirmation message and then send no further messages unless you opt back in."
+          },
+          {
+            "heading": "5. Help",
+            "body": "For help, reply HELP to any message, or contact us at elect.lisacallan@gmail.com."
+          },
+          {
+            "heading": "6. Carriers",
+            "body": "Mobile carriers are not liable for delayed or undelivered messages."
+          },
+          {
+            "heading": "7. Privacy",
+            "body": "Your privacy matters to us. We will not share your opt-in to an SMS campaign with any third party for purposes unrelated to providing you with the services of that campaign. We may share your personal data, including your SMS opt-in or consent status, with third parties that help us provide our messaging services, including but not limited to platform providers, phone companies, and other vendors who assist us in delivering text messages. All of the above categories exclude text-messaging originator opt-in data and consent; this information will not be shared with any third parties. See our [Privacy Policy](/privacy) for more."
+          },
+          {
+            "heading": "8. Changes",
+            "body": "We may update these terms from time to time. Continued participation after changes constitutes acceptance of the updated terms."
+          }
+        ],
+        "contact": "Friends of Lisa Callan · PO Box 3203, Issaquah, WA 98027 · elect.lisacallan@gmail.com",
+        "lastUpdated": "Last updated: October 2026."
+      }
+    }
   }
 }

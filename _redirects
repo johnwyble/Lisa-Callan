@@ -1,2 +1,6 @@
 /home    /    301
 /donate  https://secure.actblue.com/donate/lisa-callan    302
+
+# Legal pages — rendered by index.html from site-config.json "legal"
+/privacy        /index.html      200
+/terms          /index.html      200
